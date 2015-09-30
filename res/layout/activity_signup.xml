@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/help_bg_img"
+    android:orientation="vertical" 
+    >
+     <TextView
+        android:id="@+id/signUpEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="Email" />
+
+    <TextView
+        android:id="@+id/signUpPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/signUpEmail"
+        android:layout_below="@+id/signUpEmail"
+        android:layout_marginTop="40dp"
+        android:text="Password" />
+
+    <TextView
+        android:id="@+id/signUpConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/signUpPassword"
+        android:layout_below="@+id/signUpPassword"
+        android:layout_marginTop="40dp"
+        android:ellipsize="marquee"
+        android:text="Confirm Password" />
+
+    <TextView
+        android:id="@+id/signUpName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/signUpConfirmPassword"
+        android:layout_below="@+id/signUpConfirmPassword"
+        android:layout_marginTop="40dp"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/signUpPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/signUpName"
+        android:layout_below="@+id/signUpName"
+        android:layout_marginTop="40dp"
+        android:text="Phone Number" />
+
+    <EditText
+        android:id="@+id/editSignUpEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/signUpEmail"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:ems="8"
+        android:hint="email@mavs.uta.edu" />
+
+    <EditText
+        android:id="@+id/editSignUpPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/signUpPassword"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:ems="8"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editSignUpConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/signUpConfirmPassword"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:ems="8"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editSignUpName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/signUpName"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:ems="8"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/signUpPhoneNumber"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:ems="8"
+        android:inputType="phone" >
+    </EditText>
+    
+   
+    <Button
+        android:id="@+id/signUpButton"
+        style="@style/NiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editPhoneNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Sign Up" />
+    
+
+</RelativeLayout>

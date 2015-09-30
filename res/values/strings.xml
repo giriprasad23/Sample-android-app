@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">helpp</string>
+    <string name="action_settings">Settings</string>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- activity_launch.xml -->
+    <string name="title_activity_launch_helpp">LaunchHelppActivity</string>
+    <string name="launchRefugee">View Posts</string>
+    <string name="launchCharity">Post Services</string>
+
+    <!-- activity_login.xml -->
+    <string name="title_activity_login_help">LoginHelpActivity</string>
+    <string name="welcome">HELPING YOU</string>
+    <string name="username">USER NAME</string>
+    <string name="password">Password</string>
+    <string name="login">Login Page</string>
+
+    <!-- activity_signup.xml -->
+    <string name="title_activity_signup_help">SignupHelpActivity</string>
+    <string name="signUp">signup</string>
+
+    <!-- activity_view.xml -->
+
+    <string name="title_activity_view_helpp">ViewHelppActivity</string>
+
+    <string-array name="post_type">
+        <item>Food</item>
+        <item>Housing</item>
+        <item>Clothing</item>
+        <item>Furniture</item>
+    </string-array>
+
+    <!-- activity_post.xml -->
+    <string name="title_activity_post_helpp">PostHelppActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Post">Post</string>
+
+</resources>
