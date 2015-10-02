@@ -30,7 +30,7 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 	  @Override
 	  public void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
-	  setContentView(R.layout.activity_post);
+	  setContentView(R.layout.activity_post_by_charity);
 	  System.out.println(state.length);
 	  
 
@@ -104,7 +104,7 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 		  System.out.println(phone);
 		  break;
 		case R.id.buttonMyPosts:
-			intent = new Intent("com.se.helpp.DISPLAYCHARITYACTIVITY");
+			intent = new Intent("com.se.helpp.LISTCHARITYPOSTACTIVITY");
 			startActivity(intent);
 			break;
 		 

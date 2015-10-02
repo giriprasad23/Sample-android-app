@@ -54,9 +54,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewActivity" >
+        <activity android:name=".DetailsCharityPostActivity" >
             <intent-filter>
-                <action android:name="com.se.helpp.VIEWACTIVITY" />
+                <action android:name="com.se.helpp.DETAILSCHARITYPOSTACTIVITY" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -69,10 +69,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DisplayPostByCharityActivity"
+            android:name=".ListCharityPostActivity"
             android:label="@string/title_activity_display_charity" >
             <intent-filter>
-                <action android:name="com.se.helpp.DISPLAYCHARITYACTIVITY" />
+                <action android:name="com.se.helpp.LISTCHARITYPOSTACTIVITY" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

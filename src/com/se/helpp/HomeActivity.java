@@ -48,13 +48,13 @@ public class HomeActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.launchRefugee:
-			intent = new Intent("com.se.helpp.DISPLAYCHARITYACTIVITY");
+			intent = new Intent("com.se.helpp.LOGINACTIVITY");
 			intent.putExtra("UserType", "Refugee");
 			startActivity(intent);
 			break;
 
 		case R.id.launchCharity:
-			intent = new Intent("com.se.helpp.POSTACTIVITY");
+			intent = new Intent("com.se.helpp.LOGINACTIVITY");
 			intent.putExtra("UserType", "Charity");
 			startActivity(intent);
 			break;
