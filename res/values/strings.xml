@@ -46,6 +46,7 @@
     <string name="MyPosts">MyPosts</string>
     <string name="title_activity_display_charity">DisplayCharity</string>
     <string name="Category">CATEGORY</string>
-    <string name="Description">DESCRIPTION</string>
+    <string name="header">Header</string>
+    <string name="description">Description</string>
 
 </resources>

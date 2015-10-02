@@ -476,9 +476,9 @@ int id editSignUpConfirmPassword 0x7f09006f
 int id editSignUpEmail 0x7f09006d
 int id editSignUpName 0x7f090070
 int id editSignUpPassword 0x7f09006e
-int id editTextAddress 0x7f090061
-int id editTextDescription 0x7f09005f
-int id editTextDetails 0x7f090062
+int id editTextAddress 0x7f090063
+int id editTextDescription 0x7f090062
+int id editTextHeader 0x7f09005f
 int id editTextPassword 0x7f090058
 int id editTextPhone 0x7f090065
 int id editTextUsername 0x7f090056
@@ -535,7 +535,7 @@ int id signUpEmail 0x7f090068
 int id signUpName 0x7f09006b
 int id signUpPassword 0x7f090069
 int id signUpPhoneNumber 0x7f09006c
-int id spinnerPost 0x7f09005c
+int id spinnerPost 0x7f09005d
 int id split_action_bar 0x7f090004
 int id src_atop 0x7f090016
 int id src_in 0x7f090017
@@ -551,9 +551,9 @@ int id textOmegaHeader 0x7f090050
 int id textOmegaPhoneNumber 0x7f090053
 int id textSpacerNoButtons 0x7f090031
 int id textViewAddress 0x7f090060
-int id textViewCategory 0x7f09005d
-int id textViewDescription 0x7f09005e
-int id textViewDetails 0x7f090063
+int id textViewCategory 0x7f09005c
+int id textViewDescription 0x7f090061
+int id textViewHeader 0x7f09005e
 int id textViewHelpingYou 0x7f090054
 int id textViewPassword 0x7f090057
 int id textViewPhone 0x7f090064
@@ -625,7 +625,6 @@ int menu splash 0x7f0d0006
 int menu view_helpp 0x7f0d0007
 int string Address 0x7f0a0023
 int string Category 0x7f0a0029
-int string Description 0x7f0a002a
 int string Details 0x7f0a0025
 int string MyPosts 0x7f0a0027
 int string Phone 0x7f0a0024
@@ -650,6 +649,8 @@ int string abc_shareactionprovider_share_with_application 0x7f0a000f
 int string abc_toolbar_collapse_description 0x7f0a0004
 int string action_settings 0x7f0a0013
 int string app_name 0x7f0a0012
+int string description 0x7f0a002b
+int string header 0x7f0a002a
 int string hello_world 0x7f0a0021
 int string launchCharity 0x7f0a0016
 int string launchRefugee 0x7f0a0015
@@ -665,7 +666,7 @@ int string title_activity_signup_help 0x7f0a001c
 int string title_activity_splash 0x7f0a0020
 int string title_activity_view_helpp 0x7f0a001e
 int string username 0x7f0a0019
-int string userpromt 0x7f0a002b
+int string userpromt 0x7f0a002c
 int string welcome 0x7f0a0018
 int style AlertDialog_AppCompat 0x7f0b0041
 int style AlertDialog_AppCompat_Light 0x7f0b0042

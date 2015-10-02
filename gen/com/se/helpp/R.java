@@ -2035,9 +2035,9 @@ containing a value of this type.
         public static final int editSignUpEmail=0x7f09006d;
         public static final int editSignUpName=0x7f090070;
         public static final int editSignUpPassword=0x7f09006e;
-        public static final int editTextAddress=0x7f090061;
-        public static final int editTextDescription=0x7f09005f;
-        public static final int editTextDetails=0x7f090062;
+        public static final int editTextAddress=0x7f090063;
+        public static final int editTextDescription=0x7f090062;
+        public static final int editTextHeader=0x7f09005f;
         public static final int editTextPassword=0x7f090058;
         public static final int editTextPhone=0x7f090065;
         public static final int editTextUsername=0x7f090056;
@@ -2094,7 +2094,7 @@ containing a value of this type.
         public static final int signUpName=0x7f09006b;
         public static final int signUpPassword=0x7f090069;
         public static final int signUpPhoneNumber=0x7f09006c;
-        public static final int spinnerPost=0x7f09005c;
+        public static final int spinnerPost=0x7f09005d;
         public static final int split_action_bar=0x7f090004;
         public static final int src_atop=0x7f090016;
         public static final int src_in=0x7f090017;
@@ -2110,9 +2110,9 @@ containing a value of this type.
         public static final int textOmegaPhoneNumber=0x7f090053;
         public static final int textSpacerNoButtons=0x7f090031;
         public static final int textViewAddress=0x7f090060;
-        public static final int textViewCategory=0x7f09005d;
-        public static final int textViewDescription=0x7f09005e;
-        public static final int textViewDetails=0x7f090063;
+        public static final int textViewCategory=0x7f09005c;
+        public static final int textViewDescription=0x7f090061;
+        public static final int textViewHeader=0x7f09005e;
         public static final int textViewHelpingYou=0x7f090054;
         public static final int textViewPassword=0x7f090057;
         public static final int textViewPhone=0x7f090064;
@@ -2221,7 +2221,6 @@ containing a value of this type.
     public static final class string {
         public static final int Address=0x7f0a0023;
         public static final int Category=0x7f0a0029;
-        public static final int Description=0x7f0a002a;
         public static final int Details=0x7f0a0025;
         public static final int MyPosts=0x7f0a0027;
         public static final int Phone=0x7f0a0024;
@@ -2288,6 +2287,8 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
         public static final int action_settings=0x7f0a0013;
         public static final int app_name=0x7f0a0012;
+        public static final int description=0x7f0a002b;
+        public static final int header=0x7f0a002a;
         public static final int hello_world=0x7f0a0021;
         public static final int launchCharity=0x7f0a0016;
         public static final int launchRefugee=0x7f0a0015;
@@ -2319,7 +2320,7 @@ containing a value of this type.
          */
         public static final int title_activity_view_helpp=0x7f0a001e;
         public static final int username=0x7f0a0019;
-        public static final int userpromt=0x7f0a002b;
+        public static final int userpromt=0x7f0a002c;
         public static final int welcome=0x7f0a0018;
     }
     public static final class style {
