@@ -17,7 +17,7 @@ public class SplashActivity extends Activity {
 				}catch (InterruptedException e){
 					e.printStackTrace();
 				}finally{
-					Intent openMainActivity = new Intent ("com.se.helpp.HOMEACTIVITY");
+					Intent openMainActivity = new Intent ("com.se.helpp.LOGINACTIVITY");
 					startActivity(openMainActivity);
 				}
 			}

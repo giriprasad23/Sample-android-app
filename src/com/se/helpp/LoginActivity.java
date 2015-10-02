@@ -16,7 +16,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 	Button buttonForgotPassword = null;
 	EditText editTextUserName = null;
 	EditText editTextPassword = null;
-	String userType = null;
+//	String userType = null;
 	String username = null;
 	String password = null;
 	Intent intent;
@@ -26,7 +26,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
-		userType = getIntent().getExtras().getString("UserType");
+//		userType = getIntent().getExtras().getString("UserType");
 		buttonLogIn = (Button) findViewById(R.id.buttonLogin);
 		buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
 		buttonForgotPassword = (Button) findViewById(R.id.buttonForgotPassword);
@@ -36,7 +36,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		buttonLogIn.setOnClickListener(this);
 		buttonSignUp.setOnClickListener(this);
 		buttonForgotPassword.setOnClickListener(this);
-		userType = getIntent().getStringExtra("UserType");
+//		userType = getIntent().getStringExtra("UserType");
 	}
 
 	@Override
@@ -64,11 +64,11 @@ public class LoginActivity extends Activity implements OnClickListener {
 		password = editTextPassword.getText().toString();
 		System.out.println(username);
 		System.out.println(password);
-		System.out.println(userType);
-		if (password.equals("giri") && username.equals("giri") && userType.equals("Refugee")) {
-			intent = new Intent("com.se.helpp.VIEWACTIVITY");
+//		System.out.println(userType);
+		if (password.equals("refugee") && username.equals("giri")) {
+			intent = new Intent("com.se.helpp.LISTREFUGEEVIEWACTIVITY");
 			startActivity(intent);
-		} else if (password.equals("giri") && username.equals("giri") && userType.equals("Charity")) {
+		} else if (password.equals("charity") && username.equals("giri")) {
 			intent = new Intent("com.se.helpp.POSTACTIVITY");
 			startActivity(intent);
 		} else {

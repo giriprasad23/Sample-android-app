@@ -48,5 +48,6 @@
     <string name="Category">CATEGORY</string>
     <string name="header">Header</string>
     <string name="description">Description</string>
+    <string name="title_activity_list_refugee_view">ListRefugeeViewActivity</string>
 
 </resources>

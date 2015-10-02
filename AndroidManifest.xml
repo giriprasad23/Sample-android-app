@@ -40,13 +40,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" >
-            <intent-filter>
-                <action android:name="com.se.helpp.HOMEACTIVITY" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name=".PostActivity" >
             <intent-filter>
                 <action android:name="com.se.helpp.POSTACTIVITY" />
@@ -76,6 +69,10 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListRefugeeViewActivity"
+            android:label="@string/title_activity_list_refugee_view" >
         </activity>
     </application>
 
