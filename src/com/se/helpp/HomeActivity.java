@@ -16,7 +16,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_launch);
+		setContentView(R.layout.activity_home);
 
 		refugee_User = (Button) findViewById(R.id.launchRefugee);
 		charity_User = (Button) findViewById(R.id.launchCharity);
@@ -48,13 +48,13 @@ public class HomeActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.launchRefugee:
-			intent = new Intent("com.se.helpp.LOGINACTIVITY");
+			intent = new Intent("com.se.helpp.DISPLAYCHARITYACTIVITY");
 			intent.putExtra("UserType", "Refugee");
 			startActivity(intent);
 			break;
 
 		case R.id.launchCharity:
-			intent = new Intent("com.se.helpp.LOGINACTIVITY");
+			intent = new Intent("com.se.helpp.POSTACTIVITY");
 			intent.putExtra("UserType", "Charity");
 			startActivity(intent);
 			break;

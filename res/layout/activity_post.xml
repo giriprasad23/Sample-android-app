@@ -11,6 +11,49 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+    
+    <TextView
+        android:id="@+id/textViewCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+		android:layout_toLeftOf="@+id/spinnerPost"
+        android:text="@string/Category" />
+    
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+		android:layout_below="@+id/spinnerPost"
+        android:text="@string/Description" />
+    
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="@+id/textViewDescription"
+        android:layout_below="@+id/spinnerPost"
+        android:ems="10"
+        android:inputType="text"/>"
+    
+    <TextView
+        android:id="@+id/textViewAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextDescription"
+		android:layout_toLeftOf="@+id/editTextAddress"
+        android:text="@string/Address" />
+    
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="@+id/textViewAddress"
+        android:layout_below="@+id/editTextDescription"
+        android:ems="10"
+        android:inputType="textPostalAddress" />
 
     <EditText
         android:id="@+id/editTextDetails"
@@ -25,24 +68,15 @@
         <requestFocus />
     </EditText>
 
-    <TextView
-        android:id="@+id/textViewAddress"
+   <TextView
+        android:id="@+id/textViewDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editTextDetails"
-        android:layout_marginTop="101dp"
-        android:text="TextView" />
-
-    <EditText
-        android:id="@+id/editTextAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textViewAddress"
-        android:layout_marginTop="114dp"
-        android:ems="10"
-        android:inputType="textPostalAddress" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="167dp"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/editTextAddress"
+        android:text="@string/Details" />
 
     <TextView
         android:id="@+id/textViewPhone"
@@ -51,18 +85,9 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/editTextAddress"
         android:layout_marginTop="78dp"
-        android:text="TextView" />
+        android:text="@string/Phone" />
 
-    <TextView
-        android:id="@+id/textViewDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="167dp"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/editTextAddress"
-        android:text="TextView" />
-
+    
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="wrap_content"
@@ -80,7 +105,7 @@
         android:layout_alignLeft="@+id/spinnerPost"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:text="Post" />
+        android:text="@string/SubmitPost" />
 
     <Button
         android:id="@+id/buttonMyPosts"
@@ -90,6 +115,7 @@
         android:layout_alignBottom="@+id/buttonPost"
         android:layout_alignParentRight="true"
         android:layout_marginRight="18dp"
-        android:text="MyPosts" />
+        android:text="@string/MyPosts" />
+
 
 </RelativeLayout>

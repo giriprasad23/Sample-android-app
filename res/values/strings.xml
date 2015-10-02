@@ -39,5 +39,13 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="Post">Post</string>
+    <string name="Address">Address</string>
+    <string name="Phone">Phone</string>
+    <string name="Details">Details</string>
+    <string name="SubmitPost">SubmitPost</string>
+    <string name="MyPosts">MyPosts</string>
+    <string name="title_activity_display_charity">DisplayCharity</string>
+    <string name="Category">CATEGORY</string>
+    <string name="Description">DESCRIPTION</string>
 
 </resources>
