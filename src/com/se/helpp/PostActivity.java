@@ -1,7 +1,12 @@
 package com.se.helpp;
 
+import com.se.uta_rides.CarOwnerSetAvailbleActivity;
+import com.se.uta_rides.CarOwnerSetAvailbleActivity.SendData;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PostActivity extends Activity implements OnItemSelectedListener, OnClickListener {
 	Intent intent;
@@ -105,6 +111,51 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 			System.out.println(address);
 			System.out.println(details);
 			System.out.println(phone);
+			
+			System.out.println("Entered button post");
+//			System.out.println("selectedStartTime"+selectedStartTime);
+			if(editTextHeader == null){
+				Toast.makeText(getApplicationContext(),
+						"Enter values in Header feild field!",
+						Toast.LENGTH_SHORT).show();				
+			}
+			else if(editTextAddress== null){
+				Toast.makeText(getApplicationContext(),
+						"Please enter the address!",
+						Toast.LENGTH_SHORT).show();
+			}
+			else if(editTextDescription==null){
+				Toast.makeText(getApplicationContext(),
+						"Please enter the description!",
+						Toast.LENGTH_SHORT).show();
+			}
+			else if (editTextPhone==null) {
+				Toast.makeText(getApplicationContext(),
+						"Enter the phone number",
+						Toast.LENGTH_SHORT).show();
+			} else {
+				Toast.makeText(
+						PostActivity.this,
+						"You selected : "
+								+ "\n"
+								+ String.valueOf(spinnerPost
+										.getSelectedItem()) + "\n"
+								
+								+ "Location : "
+						// +
+						// String.valueOf(favSpotDropDownList.getSelectedItem())
+						, Toast.LENGTH_SHORT).show();
+
+				SharedPreferences userDetails = getSharedPreferences("MyData",
+						Context.MODE_PRIVATE);
+				String userName = userDetails.getString("name", "null");
+//
+//				new SendData().execute(userName,
+//						String.valueOf(dayDropDownList.getSelectedItem()),
+//						selectedStartTime, selectedEndTime,
+//						selectedNumberOfSeats, selectedLocationLatitude,
+//						selectedLocationLongitude, selectedLocationAddress);
+			}
 			break;
 		case R.id.buttonMyPosts:
 			intent = new Intent("com.se.helpp.LISTCHARITYPOSTACTIVITY");
