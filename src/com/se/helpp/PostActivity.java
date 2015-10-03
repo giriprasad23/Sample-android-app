@@ -3,14 +3,19 @@ package com.se.helpp;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpRetryException;
+import java.net.URLEncoder;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DecompressingHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,7 +42,7 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 	String category = null;
 	String header = null;
 	String address = null;
-	String details = null;
+	String description = null;
 	String phone = null;
 	private String[] state = { "Food", "Housing", "Clothing", "Furniture" };
 
@@ -108,11 +113,15 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 			category = (String) spinnerPost.getSelectedItem();
 			header = editTextHeader.getText().toString().trim();
 			address = editTextAddress.getText().toString().trim();
-			details = editTextDescription.getText().toString().trim();
+			description = editTextDescription.getText().toString().trim();
 			phone = editTextPhone.getText().toString().trim();
 
+			final String DEFAULT = "N/A";
+			SharedPreferences sharedpreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+			String name = sharedpreferences.getString("name", DEFAULT);
+
 			System.out.println(address);
-			System.out.println(details);
+			System.out.println(description);
 			System.out.println(phone);
 
 			System.out.println("Entered button post");
@@ -129,13 +138,10 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 			} else {
 				Toast.makeText(PostActivity.this,
 						"You selected : " + "\n" + String.valueOf(spinnerPost.getSelectedItem()) + "\n" + category
-								+ "\n" + header + "\n" + address + "\n" + details + "\n" + phone,
+								+ "\n" + header + "\n" + address + "\n" + description + "\n" + phone,
 						Toast.LENGTH_SHORT).show();
 
-				new SendData().execute(category, header, address, details, phone);
-
-				SendData omegaData = new SendData();
-				omegaData.execute();
+				new SendData().execute(name, category, header, description, address, phone);
 			}
 			break;
 
@@ -147,42 +153,46 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 		}
 	}
 
-	private class SendData extends AsyncTask<String, String, String[]> {
+	private class SendData extends AsyncTask<String, String, String> {
 		HttpClient httpClient;
 		HttpResponse httpResponse;
 		HttpPost httpPost;
 
 		@SuppressWarnings("deprecation")
 		@Override
-		protected String[] doInBackground(String... params) {
-			String category = params[0];
-			String header = params[1];
-			String Description = params[2];
-			String Address = params[3];
-			String Phone = params[4];
-
-			String topostPHP = "category=" + category + "'&&" + "header='" + header + "'&&" + "description='"
-					+ Description + "'&&" + "address='" + Address + "'&&" + "phone='" + Phone;
-			System.out.println(topostPHP);
-			httpClient = new DecompressingHttpClient();
-			Log.i("ListCharityPostActivity - ", "Created httpClient");
-			httpPost = new HttpPost("http://http://omega.uta.edu/~sas4798/food_post.php?" + topostPHP);
-
-			System.out.println("wooooooooo hooo");
-
+		protected String doInBackground(String... params) {
 			try {
+				String name = URLEncoder.encode(params[0], "UTF-8").replace("+", "%20");
+				String category = URLEncoder.encode(params[1], "UTF-8").replace("+", "%20");
+				String header = URLEncoder.encode(params[2], "UTF-8").replace("+", "%20");
+				String Description = URLEncoder.encode(params[3], "UTF-8").replace("+", "%20");
+				String Address = URLEncoder.encode(params[4], "UTF-8").replace("+", "%20");
+				String Phone = URLEncoder.encode(params[5], "UTF-8").replace("+", "%20");
+
+				String toPostPHP = "postuname=" + name + "&postcategory=" + category + "&postheader=" + header
+						+ "&postdescription=" + Description + "&postaddress=" + Address + "&postphone=" + Phone;
+
+				String fullURL = "http://omega.uta.edu/~gxr7481/charity_post.php?" + toPostPHP;
+				httpClient = new DefaultHttpClient();
+
+				Log.i("PostActvitiy - ", "Created httpClient " + fullURL);
+				httpPost = new HttpPost(fullURL);
 				httpResponse = httpClient.execute(httpPost);
+			} catch (ArrayIndexOutOfBoundsException e) {
+				Log.e("PostActvitiy - ", "Error in ArrayIndexOutOfBoundsException - " + e.toString());
+			} catch (ClientProtocolException e) {
+				Log.e("PostActvitiy - ", "Error in ClientProtocolException - " + e.toString());
 			} catch (UnsupportedEncodingException e) {
 				Log.e("PostActivity URL Encode - ", e.toString());
 			} catch (IllegalArgumentException e) {
 				Log.e("PostActivity Illegal Args - ", e.toString());
-			} catch (org.apache.http.client.ClientProtocolException e) {
-				Log.e("PostActivity Protocol - ", e.toString());
 			} catch (HttpRetryException e) {
 				Log.e("PostActivity Connection - ", e.toString());
 			} catch (IOException e) {
-				Log.e("CarOwnePostActivityrSetAvailableActivity IO - ", e.toString());
+				Log.e("PostActivity IO - ", e.toString());
 			}
+
+			System.out.println("wooooooooo hooo");
 			return null;
 		}
 	}

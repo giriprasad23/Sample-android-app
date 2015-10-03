@@ -114,7 +114,7 @@ public class ListCharityPostActivity extends Activity implements OnItemClickList
 				httpClient = new DefaultHttpClient();
 				Log.i("ListCharityPostActivity - ", "Created httpClient");
 
-				httpPost = new HttpPost("http://omega.uta.edu/~sas4798/food_get.php");
+				httpPost = new HttpPost("http://omega.uta.edu/~gxr7481/charity_get.php");
 				Log.i("ListCharityPostActivity - ", "Created httpPost to omega");
 
 				httpResponse = httpClient.execute(httpPost);

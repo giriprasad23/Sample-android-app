@@ -1,8 +1,9 @@
 package com.se.helpp;
 
-
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +19,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 	Button buttonForgotPassword = null;
 	EditText editTextUserName = null;
 	EditText editTextPassword = null;
-//	String userType = null;
+	// String userType = null;
 	String username = null;
 	String password = null;
 	Intent intent;
@@ -28,7 +29,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
-//		userType = getIntent().getExtras().getString("UserType");
+		// userType = getIntent().getExtras().getString("UserType");
 		buttonLogIn = (Button) findViewById(R.id.buttonLogin);
 		buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
 		buttonForgotPassword = (Button) findViewById(R.id.buttonForgotPassword);
@@ -38,7 +39,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		buttonLogIn.setOnClickListener(this);
 		buttonSignUp.setOnClickListener(this);
 		buttonForgotPassword.setOnClickListener(this);
-//		userType = getIntent().getStringExtra("UserType");
+		// userType = getIntent().getStringExtra("UserType");
 	}
 
 	@Override
@@ -64,26 +65,28 @@ public class LoginActivity extends Activity implements OnClickListener {
 	public void onClick(View view) {
 		username = editTextUserName.getText().toString().trim();
 		password = editTextPassword.getText().toString();
-		
-		if(username.isEmpty()){
-			Toast.makeText(getApplicationContext(),
-					"Enter Username!",
-					Toast.LENGTH_SHORT).show();
-		}
-		else if(password.isEmpty()){
-			Toast.makeText(getApplicationContext(),
-					"Enter the password!",
-					Toast.LENGTH_SHORT).show();
-		}else if(password.length() < 8 || !(password.contains("@") || password.contains("!") || password.contains("&")))
-        { 
+
+		if (username.isEmpty()) {
+			Toast.makeText(getApplicationContext(), "Enter Username!", Toast.LENGTH_SHORT).show();
+		} else if (password.isEmpty()) {
+			Toast.makeText(getApplicationContext(), "Enter the password!", Toast.LENGTH_SHORT).show();
+		} else if (password.length() < 8
+				|| !(password.contains("@") || password.contains("!") || password.contains("&"))) {
 			Toast.makeText(getApplicationContext(),
 					"Password length should contain minimum 8 characters and atleast one special symbol( @,&,!)!",
-					Toast.LENGTH_LONG).show(); 
-        }
-		else{
+					Toast.LENGTH_LONG).show();
+		} else {
 			System.out.println(username);
 			System.out.println(password);
-//			System.out.println(userType);
+			
+			SharedPreferences sharedpreferences = getSharedPreferences(
+					"MyData", Context.MODE_PRIVATE);
+			SharedPreferences.Editor editor = sharedpreferences.edit();
+			editor.putString("name", username);
+			editor.putString("pass", password);
+			editor.commit();
+			
+			// System.out.println(userType);
 			if (password.equals("refugee@1234") && username.equals("refugee")) {
 				intent = new Intent("com.se.helpp.LISTREFUGEEVIEWACTIVITY");
 				startActivity(intent);
@@ -94,10 +97,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 				System.out.println("Wrong credentials");
 			}
 
-		
-	}
+		}
 
-	
-		
 	}
 }
