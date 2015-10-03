@@ -1,13 +1,19 @@
 package com.se.helpp;
 
-import com.se.uta_rides.CarOwnerSetAvailbleActivity;
-import com.se.uta_rides.CarOwnerSetAvailbleActivity.SendData;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpRetryException;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DecompressingHttpClient;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,10 +31,10 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 	Intent intent;
 	Spinner spinnerPost;
 	TextView textViewAddress, textViewPhone, textViewDetails;
-	EditText editTextDescription, editTextAddress, editTextPhone,editTextHeader;
+	EditText editTextDescription, editTextAddress, editTextPhone, editTextHeader;
 	Button buttonPost = null;
 	Button buttonMyPosts = null;
-	String category =null;
+	String category = null;
 	String header = null;
 	String address = null;
 	String details = null;
@@ -41,10 +47,6 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 		setContentView(R.layout.activity_post_by_charity);
 		System.out.println(state.length);
 
-		// textViewAddress = (TextView) findViewById(R.id.textViewAddress);
-		// textViewPhone = (TextView) findViewById(R.id.textViewPhone);
-		// textViewDetails = (TextView) findViewById(R.id.textViewDetails);
-		
 		editTextDescription = (EditText) findViewById(R.id.editTextDescription);
 		editTextAddress = (EditText) findViewById(R.id.editTextAddress);
 		editTextPhone = (EditText) findViewById(R.id.editTextPhone);
@@ -54,6 +56,7 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 
 		buttonPost.setOnClickListener(this);
 		buttonMyPosts.setOnClickListener(this);
+
 		spinnerPost = (Spinner) findViewById(R.id.spinnerPost);
 		ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
 				state);
@@ -111,57 +114,76 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 			System.out.println(address);
 			System.out.println(details);
 			System.out.println(phone);
-			
-			System.out.println("Entered button post");
-//			System.out.println("selectedStartTime"+selectedStartTime);
-			if(editTextHeader == null){
-				Toast.makeText(getApplicationContext(),
-						"Enter values in Header feild field!",
-						Toast.LENGTH_SHORT).show();				
-			}
-			else if(editTextAddress== null){
-				Toast.makeText(getApplicationContext(),
-						"Please enter the address!",
-						Toast.LENGTH_SHORT).show();
-			}
-			else if(editTextDescription==null){
-				Toast.makeText(getApplicationContext(),
-						"Please enter the description!",
-						Toast.LENGTH_SHORT).show();
-			}
-			else if (editTextPhone==null) {
-				Toast.makeText(getApplicationContext(),
-						"Enter the phone number",
-						Toast.LENGTH_SHORT).show();
-			} else {
-				Toast.makeText(
-						PostActivity.this,
-						"You selected : "
-								+ "\n"
-								+ String.valueOf(spinnerPost
-										.getSelectedItem()) + "\n"
-								
-								+ "Location : "
-						// +
-						// String.valueOf(favSpotDropDownList.getSelectedItem())
-						, Toast.LENGTH_SHORT).show();
 
-				SharedPreferences userDetails = getSharedPreferences("MyData",
-						Context.MODE_PRIVATE);
-				String userName = userDetails.getString("name", "null");
-//
-//				new SendData().execute(userName,
-//						String.valueOf(dayDropDownList.getSelectedItem()),
-//						selectedStartTime, selectedEndTime,
-//						selectedNumberOfSeats, selectedLocationLatitude,
-//						selectedLocationLongitude, selectedLocationAddress);
+			System.out.println("Entered button post");
+			// System.out.println("selectedStartTime"+selectedStartTime);
+			if (editTextHeader == null) {
+				Toast.makeText(getApplicationContext(), "Enter values in Header feild field!", Toast.LENGTH_SHORT)
+						.show();
+			} else if (editTextAddress == null) {
+				Toast.makeText(getApplicationContext(), "Please enter the address!", Toast.LENGTH_SHORT).show();
+			} else if (editTextDescription == null) {
+				Toast.makeText(getApplicationContext(), "Please enter the description!", Toast.LENGTH_SHORT).show();
+			} else if (editTextPhone == null) {
+				Toast.makeText(getApplicationContext(), "Enter the phone number", Toast.LENGTH_SHORT).show();
+			} else {
+				Toast.makeText(PostActivity.this,
+						"You selected : " + "\n" + String.valueOf(spinnerPost.getSelectedItem()) + "\n" + category
+								+ "\n" + header + "\n" + address + "\n" + details + "\n" + phone,
+						Toast.LENGTH_SHORT).show();
+
+				new SendData().execute(category, header, address, details, phone);
+
+				SendData omegaData = new SendData();
+				omegaData.execute();
 			}
 			break;
+
 		case R.id.buttonMyPosts:
 			intent = new Intent("com.se.helpp.LISTCHARITYPOSTACTIVITY");
 			startActivity(intent);
 			break;
 
+		}
+	}
+
+	private class SendData extends AsyncTask<String, String, String[]> {
+		HttpClient httpClient;
+		HttpResponse httpResponse;
+		HttpPost httpPost;
+
+		@SuppressWarnings("deprecation")
+		@Override
+		protected String[] doInBackground(String... params) {
+			String category = params[0];
+			String header = params[1];
+			String Description = params[2];
+			String Address = params[3];
+			String Phone = params[4];
+
+			String topostPHP = "category=" + category + "'&&" + "header='" + header + "'&&" + "description='"
+					+ Description + "'&&" + "address='" + Address + "'&&" + "phone='" + Phone;
+			System.out.println(topostPHP);
+			httpClient = new DecompressingHttpClient();
+			Log.i("ListCharityPostActivity - ", "Created httpClient");
+			httpPost = new HttpPost("http://http://omega.uta.edu/~sas4798/food_post.php?" + topostPHP);
+
+			System.out.println("wooooooooo hooo");
+
+			try {
+				httpResponse = httpClient.execute(httpPost);
+			} catch (UnsupportedEncodingException e) {
+				Log.e("PostActivity URL Encode - ", e.toString());
+			} catch (IllegalArgumentException e) {
+				Log.e("PostActivity Illegal Args - ", e.toString());
+			} catch (org.apache.http.client.ClientProtocolException e) {
+				Log.e("PostActivity Protocol - ", e.toString());
+			} catch (HttpRetryException e) {
+				Log.e("PostActivity Connection - ", e.toString());
+			} catch (IOException e) {
+				Log.e("CarOwnePostActivityrSetAvailableActivity IO - ", e.toString());
+			}
+			return null;
 		}
 	}
 }
