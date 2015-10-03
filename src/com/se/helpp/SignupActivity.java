@@ -1,10 +1,11 @@
 package com.se.helpp;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+@SuppressWarnings("deprecation")
 public class SignupActivity extends ActionBarActivity {
 
 	@Override

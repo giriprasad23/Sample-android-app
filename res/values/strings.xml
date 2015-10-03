@@ -23,10 +23,8 @@
     <string name="title_activity_signup_help">SignupHelpActivity</string>
     <string name="signUp">signup</string>
 
-    <!-- activity_view.xml -->
 
-    <string name="title_activity_view_helpp">ViewHelppActivity</string>
-
+    <!-- activity_list_charity_posts.xml -->
     <string-array name="post_type">
         <item>Food</item>
         <item>Housing</item>

@@ -9,7 +9,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DecompressingHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.app.Activity;
@@ -32,6 +31,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+@SuppressWarnings("deprecation")
 public class PostActivity extends Activity implements OnItemSelectedListener, OnClickListener {
 	Intent intent;
 	Spinner spinnerPost;
@@ -155,10 +155,10 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 
 	private class SendData extends AsyncTask<String, String, String> {
 		HttpClient httpClient;
+		@SuppressWarnings("unused")
 		HttpResponse httpResponse;
 		HttpPost httpPost;
 
-		@SuppressWarnings("deprecation")
 		@Override
 		protected String doInBackground(String... params) {
 			try {

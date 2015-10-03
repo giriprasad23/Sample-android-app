@@ -2217,13 +2217,13 @@ containing a value of this type.
         public static final int view_helpp=0x7f0d0008;
     }
     public static final class string {
-        public static final int Address=0x7f0a0023;
-        public static final int Category=0x7f0a0029;
-        public static final int Details=0x7f0a0025;
-        public static final int MyPosts=0x7f0a0027;
-        public static final int Phone=0x7f0a0024;
-        public static final int Post=0x7f0a0022;
-        public static final int SubmitPost=0x7f0a0026;
+        public static final int Address=0x7f0a0022;
+        public static final int Category=0x7f0a0028;
+        public static final int Details=0x7f0a0024;
+        public static final int MyPosts=0x7f0a0026;
+        public static final int Phone=0x7f0a0023;
+        public static final int Post=0x7f0a0021;
+        public static final int SubmitPost=0x7f0a0025;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0a0001;
@@ -2285,9 +2285,9 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
         public static final int action_settings=0x7f0a0013;
         public static final int app_name=0x7f0a0012;
-        public static final int description=0x7f0a002b;
-        public static final int header=0x7f0a002a;
-        public static final int hello_world=0x7f0a0021;
+        public static final int description=0x7f0a002a;
+        public static final int header=0x7f0a0029;
+        public static final int hello_world=0x7f0a0020;
         public static final int launchCharity=0x7f0a0016;
         public static final int launchRefugee=0x7f0a0015;
         public static final int login=0x7f0a001b;
@@ -2300,26 +2300,23 @@ containing a value of this type.
          [CHAR LIMIT=4] 
          */
         public static final int status_bar_notification_info_overflow=0x7f0a0011;
-        public static final int title_activity_display_charity=0x7f0a0028;
+        public static final int title_activity_display_charity=0x7f0a0027;
         /**  activity_launch.xml 
          */
         public static final int title_activity_launch_helpp=0x7f0a0014;
-        public static final int title_activity_list_refugee_view=0x7f0a002c;
+        public static final int title_activity_list_refugee_view=0x7f0a002b;
         /**  activity_login.xml 
          */
         public static final int title_activity_login_help=0x7f0a0017;
         /**  activity_post.xml 
          */
-        public static final int title_activity_post_helpp=0x7f0a001f;
+        public static final int title_activity_post_helpp=0x7f0a001e;
         /**  activity_signup.xml 
          */
         public static final int title_activity_signup_help=0x7f0a001c;
-        public static final int title_activity_splash=0x7f0a0020;
-        /**  activity_view.xml 
-         */
-        public static final int title_activity_view_helpp=0x7f0a001e;
+        public static final int title_activity_splash=0x7f0a001f;
         public static final int username=0x7f0a0019;
-        public static final int userpromt=0x7f0a002d;
+        public static final int userpromt=0x7f0a002c;
         public static final int welcome=0x7f0a0018;
     }
     public static final class style {
