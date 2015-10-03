@@ -35,7 +35,7 @@ public class ListCharityPostActivity extends Activity implements OnItemClickList
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_details_charity_posts);
+		setContentView(R.layout.activity_list_charity_posts);
 
 		final ListView listview = (ListView) findViewById(R.id.listViewCharityPosts);
 
@@ -50,8 +50,10 @@ public class ListCharityPostActivity extends Activity implements OnItemClickList
 
 		final ArrayList<String> list = new ArrayList<String>();
 		for (int i = 0; i < values.length; ++i) {
+			Log.i("ListCharityPostActivity - ", "Data from Omega in onCreate " + values[i]);
 			list.add(values[i]);
 		}
+		
 		final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 		listview.setAdapter(adapter);
 		listview.setOnItemClickListener(this);
@@ -62,8 +64,7 @@ public class ListCharityPostActivity extends Activity implements OnItemClickList
 		final String item = (String) parent.getItemAtPosition(position);
 		Toast.makeText(getApplicationContext(), item, Toast.LENGTH_LONG).show();
 
-		String dummyData = "Bread, Great Value Bread from Walmart. Available till October 4, 112 UTA Boulevard ERB 112 Arlington TX 76011, 1234567890";
-		String[] sendData = dummyData.split(",");
+		String[] sendData = item.split(";");
 		Intent i = new Intent(ListCharityPostActivity.this, DetailsCharityPostActivity.class);
 		i.putExtra("textOmegaHeader", sendData[0]);
 		i.putExtra("textOmegaDescription", sendData[1]);
@@ -113,10 +114,12 @@ public class ListCharityPostActivity extends Activity implements OnItemClickList
 				httpClient = new DefaultHttpClient();
 				Log.i("ListCharityPostActivity - ", "Created httpClient");
 
-				httpPost = new HttpPost("http://omega.uta.edu/~sas4798/food.php");
+				httpPost = new HttpPost("http://omega.uta.edu/~sas4798/food_get.php");
 				Log.i("ListCharityPostActivity - ", "Created httpPost to omega");
 
 				httpResponse = httpClient.execute(httpPost);
+				
+				
 				Log.i("ListCharityPostActivity - ", "Created httpResponse");
 
 				httpEntity = httpResponse.getEntity();

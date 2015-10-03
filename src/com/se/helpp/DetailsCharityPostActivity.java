@@ -15,7 +15,7 @@ public class DetailsCharityPostActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_list_charity_posts);
+		setContentView(R.layout.activity_details_charity_posts);
 
 		textOmegaHeader = (TextView) findViewById(R.id.textOmegaHeader);
 		textOmegaDescription = (TextView) findViewById(R.id.textOmegaDescription);

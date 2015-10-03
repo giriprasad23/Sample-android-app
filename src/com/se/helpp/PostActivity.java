@@ -19,9 +19,11 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 	Intent intent;
 	Spinner spinnerPost;
 	TextView textViewAddress, textViewPhone, textViewDetails;
-	EditText editTextDescription, editTextAddress, editTextPhone;
+	EditText editTextDescription, editTextAddress, editTextPhone,editTextHeader;
 	Button buttonPost = null;
 	Button buttonMyPosts = null;
+	String category =null;
+	String header = null;
 	String address = null;
 	String details = null;
 	String phone = null;
@@ -36,9 +38,11 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 		// textViewAddress = (TextView) findViewById(R.id.textViewAddress);
 		// textViewPhone = (TextView) findViewById(R.id.textViewPhone);
 		// textViewDetails = (TextView) findViewById(R.id.textViewDetails);
+		
 		editTextDescription = (EditText) findViewById(R.id.editTextDescription);
 		editTextAddress = (EditText) findViewById(R.id.editTextAddress);
 		editTextPhone = (EditText) findViewById(R.id.editTextPhone);
+		editTextHeader = (EditText) findViewById(R.id.editTextHeader);
 		buttonPost = (Button) findViewById(R.id.buttonPost);
 		buttonMyPosts = (Button) findViewById(R.id.buttonMyPosts);
 
@@ -92,6 +96,8 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 		switch (v.getId()) {
 
 		case R.id.buttonPost:
+			category = (String) spinnerPost.getSelectedItem();
+			header = editTextHeader.getText().toString().trim();
 			address = editTextAddress.getText().toString().trim();
 			details = editTextDescription.getText().toString().trim();
 			phone = editTextPhone.getText().toString().trim();

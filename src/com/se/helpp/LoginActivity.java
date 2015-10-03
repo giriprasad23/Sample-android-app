@@ -1,5 +1,6 @@
 package com.se.helpp;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity implements OnClickListener {
 	Button buttonLogIn = null;
@@ -62,17 +64,40 @@ public class LoginActivity extends Activity implements OnClickListener {
 	public void onClick(View view) {
 		username = editTextUserName.getText().toString().trim();
 		password = editTextPassword.getText().toString();
-		System.out.println(username);
-		System.out.println(password);
-//		System.out.println(userType);
-		if (password.equals("refugee") && username.equals("giri")) {
-			intent = new Intent("com.se.helpp.LISTREFUGEEVIEWACTIVITY");
-			startActivity(intent);
-		} else if (password.equals("charity") && username.equals("giri")) {
-			intent = new Intent("com.se.helpp.POSTACTIVITY");
-			startActivity(intent);
-		} else {
-			System.out.println("Wrong credentials");
+		
+		if(username.isEmpty()){
+			Toast.makeText(getApplicationContext(),
+					"Enter Username!",
+					Toast.LENGTH_SHORT).show();
 		}
+		else if(password.isEmpty()){
+			Toast.makeText(getApplicationContext(),
+					"Enter the password!",
+					Toast.LENGTH_SHORT).show();
+		}else if(password.length() < 8 || !(password.contains("@") || password.contains("!") || password.contains("&")))
+        { 
+			Toast.makeText(getApplicationContext(),
+					"Password length should contain minimum 8 characters and atleast one special symbol( @,&,!)!",
+					Toast.LENGTH_LONG).show(); 
+        }
+		else{
+			System.out.println(username);
+			System.out.println(password);
+//			System.out.println(userType);
+			if (password.equals("refugee@1234") && username.equals("refugee")) {
+				intent = new Intent("com.se.helpp.LISTREFUGEEVIEWACTIVITY");
+				startActivity(intent);
+			} else if (password.equals("charity@1234") && username.equals("charity")) {
+				intent = new Intent("com.se.helpp.POSTACTIVITY");
+				startActivity(intent);
+			} else {
+				System.out.println("Wrong credentials");
+			}
+
+		
+	}
+
+	
+		
 	}
 }

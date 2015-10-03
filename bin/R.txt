@@ -497,7 +497,7 @@ int id line1 0x7f090078
 int id line3 0x7f09007c
 int id listMode 0x7f09000a
 int id listPosts 0x7f090053
-int id listViewCharityPosts 0x7f09004d
+int id listViewCharityPosts 0x7f090051
 int id list_item 0x7f090028
 int id media_actions 0x7f090076
 int id middle 0x7f090020
@@ -543,10 +543,10 @@ int id submit_area 0x7f090049
 int id tabMode 0x7f09000c
 int id text 0x7f09007d
 int id text2 0x7f09007b
-int id textOmegaAddress 0x7f090050
-int id textOmegaDescription 0x7f09004f
-int id textOmegaHeader 0x7f09004e
-int id textOmegaPhoneNumber 0x7f090051
+int id textOmegaAddress 0x7f09004f
+int id textOmegaDescription 0x7f09004e
+int id textOmegaHeader 0x7f09004d
+int id textOmegaPhoneNumber 0x7f090050
 int id textSpacerNoButtons 0x7f090031
 int id textViewAddress 0x7f090060
 int id textViewCategory 0x7f09005c

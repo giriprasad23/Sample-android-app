@@ -2056,7 +2056,7 @@ containing a value of this type.
         public static final int line3=0x7f09007c;
         public static final int listMode=0x7f09000a;
         public static final int listPosts=0x7f090053;
-        public static final int listViewCharityPosts=0x7f09004d;
+        public static final int listViewCharityPosts=0x7f090051;
         public static final int list_item=0x7f090028;
         public static final int media_actions=0x7f090076;
         public static final int middle=0x7f090020;
@@ -2102,10 +2102,10 @@ containing a value of this type.
         public static final int tabMode=0x7f09000c;
         public static final int text=0x7f09007d;
         public static final int text2=0x7f09007b;
-        public static final int textOmegaAddress=0x7f090050;
-        public static final int textOmegaDescription=0x7f09004f;
-        public static final int textOmegaHeader=0x7f09004e;
-        public static final int textOmegaPhoneNumber=0x7f090051;
+        public static final int textOmegaAddress=0x7f09004f;
+        public static final int textOmegaDescription=0x7f09004e;
+        public static final int textOmegaHeader=0x7f09004d;
+        public static final int textOmegaPhoneNumber=0x7f090050;
         public static final int textSpacerNoButtons=0x7f090031;
         public static final int textViewAddress=0x7f090060;
         public static final int textViewCategory=0x7f09005c;
