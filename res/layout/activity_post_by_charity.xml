@@ -119,4 +119,14 @@
         android:layout_marginRight="40dp"
         android:text="@string/MyPosts" />
 
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonPost"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/reset" />
+
 </RelativeLayout>

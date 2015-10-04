@@ -37,8 +37,7 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 	Spinner spinnerPost;
 	TextView textViewAddress, textViewPhone, textViewDetails;
 	EditText editTextDescription, editTextAddress, editTextPhone, editTextHeader;
-	Button buttonPost = null;
-	Button buttonMyPosts = null;
+	Button buttonPost, buttonMyPosts, buttonReset;
 	String category = null;
 	String header = null;
 	String address = null;
@@ -58,9 +57,11 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 		editTextHeader = (EditText) findViewById(R.id.editTextHeader);
 		buttonPost = (Button) findViewById(R.id.buttonPost);
 		buttonMyPosts = (Button) findViewById(R.id.buttonMyPosts);
+		buttonReset = (Button) findViewById(R.id.buttonReset);
 
 		buttonPost.setOnClickListener(this);
 		buttonMyPosts.setOnClickListener(this);
+		buttonReset.setOnClickListener(this);
 
 		spinnerPost = (Spinner) findViewById(R.id.spinnerPost);
 		ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
@@ -142,6 +143,12 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 						Toast.LENGTH_SHORT).show();
 
 				new SendData().execute(name, category, header, description, address, phone);
+
+				editTextDescription.setText(" ");
+				editTextAddress.setText(" ");
+				editTextPhone.setText(" ");
+				editTextHeader.setText(" ");
+				;
 			}
 			break;
 
@@ -150,6 +157,12 @@ public class PostActivity extends Activity implements OnItemSelectedListener, On
 			startActivity(intent);
 			break;
 
+		case R.id.buttonReset:
+			editTextDescription.setText(" ");
+			editTextAddress.setText(" ");
+			editTextPhone.setText(" ");
+			editTextHeader.setText(" ");
+			break;
 		}
 	}
 

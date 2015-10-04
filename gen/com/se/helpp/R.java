@@ -21,6 +21,8 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040009;
     }
     public static final class array {
+        /**  activity_list_charity_posts.xml 
+         */
         public static final int post_type=0x7f0c0000;
     }
     public static final class attr {
@@ -1994,7 +1996,7 @@ containing a value of this type.
         public static final int states_nice_button=0x7f020044;
     }
     public static final class id {
-        public static final int action0=0x7f090073;
+        public static final int action0=0x7f090075;
         public static final int action_bar=0x7f09003e;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f09003d;
@@ -2003,26 +2005,28 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f090022;
         public static final int action_bar_title=0x7f090021;
         public static final int action_context_bar=0x7f09003f;
-        public static final int action_divider=0x7f090077;
+        public static final int action_divider=0x7f090079;
         public static final int action_menu_divider=0x7f090005;
         public static final int action_menu_presenter=0x7f090006;
         public static final int action_mode_bar=0x7f09003b;
         public static final int action_mode_bar_stub=0x7f09003a;
         public static final int action_mode_close_button=0x7f090023;
-        public static final int action_settings=0x7f090080;
+        public static final int action_settings=0x7f090082;
         public static final int activity_chooser_view_content=0x7f090024;
         public static final int alertTitle=0x7f09002e;
         public static final int always=0x7f090019;
         public static final int beginning=0x7f09001e;
-        public static final int buttonForgotPassword=0x7f09005a;
-        public static final int buttonLogin=0x7f090059;
-        public static final int buttonMyPosts=0x7f090067;
+        public static final int buttonDeletePost=0x7f090051;
+        public static final int buttonForgotPassword=0x7f09005b;
+        public static final int buttonLogin=0x7f09005a;
+        public static final int buttonMyPosts=0x7f090068;
         public static final int buttonPanel=0x7f090034;
-        public static final int buttonPost=0x7f090066;
-        public static final int buttonSignUp=0x7f09005b;
-        public static final int cancel_action=0x7f090074;
+        public static final int buttonPost=0x7f090067;
+        public static final int buttonReset=0x7f090069;
+        public static final int buttonSignUp=0x7f09005c;
+        public static final int cancel_action=0x7f090076;
         public static final int checkbox=0x7f090036;
-        public static final int chronometer=0x7f09007a;
+        public static final int chronometer=0x7f09007c;
         public static final int collapseActionView=0x7f09001a;
         public static final int contentPanel=0x7f09002f;
         public static final int custom=0x7f090033;
@@ -2030,20 +2034,20 @@ containing a value of this type.
         public static final int decor_content_parent=0x7f09003c;
         public static final int default_activity_button=0x7f090027;
         public static final int disableHome=0x7f09000d;
-        public static final int editPhoneNumber=0x7f090071;
-        public static final int editSignUpConfirmPassword=0x7f09006f;
-        public static final int editSignUpEmail=0x7f09006d;
-        public static final int editSignUpName=0x7f090070;
-        public static final int editSignUpPassword=0x7f09006e;
-        public static final int editTextAddress=0x7f090063;
-        public static final int editTextDescription=0x7f090062;
-        public static final int editTextHeader=0x7f09005f;
-        public static final int editTextPassword=0x7f090058;
-        public static final int editTextPhone=0x7f090065;
-        public static final int editTextUsername=0x7f090056;
+        public static final int editPhoneNumber=0x7f090073;
+        public static final int editSignUpConfirmPassword=0x7f090071;
+        public static final int editSignUpEmail=0x7f09006f;
+        public static final int editSignUpName=0x7f090072;
+        public static final int editSignUpPassword=0x7f090070;
+        public static final int editTextAddress=0x7f090064;
+        public static final int editTextDescription=0x7f090063;
+        public static final int editTextHeader=0x7f090060;
+        public static final int editTextPassword=0x7f090059;
+        public static final int editTextPhone=0x7f090066;
+        public static final int editTextUsername=0x7f090057;
         public static final int edit_query=0x7f090040;
         public static final int end=0x7f09001f;
-        public static final int end_padder=0x7f09007f;
+        public static final int end_padder=0x7f090081;
         public static final int expand_activities_button=0x7f090025;
         public static final int expanded_menu=0x7f090035;
         public static final int home=0x7f090000;
@@ -2051,14 +2055,14 @@ containing a value of this type.
         public static final int icon=0x7f090029;
         public static final int ifRoom=0x7f09001b;
         public static final int image=0x7f090026;
-        public static final int info=0x7f09007e;
-        public static final int line1=0x7f090078;
-        public static final int line3=0x7f09007c;
+        public static final int info=0x7f090080;
+        public static final int line1=0x7f09007a;
+        public static final int line3=0x7f09007e;
         public static final int listMode=0x7f09000a;
-        public static final int listPosts=0x7f090053;
-        public static final int listViewCharityPosts=0x7f090051;
+        public static final int listPosts=0x7f090054;
+        public static final int listViewCharityPosts=0x7f090052;
         public static final int list_item=0x7f090028;
-        public static final int media_actions=0x7f090076;
+        public static final int media_actions=0x7f090078;
         public static final int middle=0x7f090020;
         public static final int multiply=0x7f090014;
         public static final int never=0x7f09001c;
@@ -2070,7 +2074,7 @@ containing a value of this type.
         public static final int radio=0x7f090038;
         public static final int screen=0x7f090015;
         public static final int scrollView=0x7f090030;
-        public static final int searchPosts=0x7f090052;
+        public static final int searchPosts=0x7f090053;
         public static final int search_badge=0x7f090042;
         public static final int search_bar=0x7f090041;
         public static final int search_button=0x7f090043;
@@ -2086,36 +2090,36 @@ containing a value of this type.
         public static final int showCustom=0x7f090010;
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
-        public static final int signUpButton=0x7f090072;
-        public static final int signUpConfirmPassword=0x7f09006a;
-        public static final int signUpEmail=0x7f090068;
-        public static final int signUpName=0x7f09006b;
-        public static final int signUpPassword=0x7f090069;
-        public static final int signUpPhoneNumber=0x7f09006c;
-        public static final int spinnerPost=0x7f09005d;
+        public static final int signUpButton=0x7f090074;
+        public static final int signUpConfirmPassword=0x7f09006c;
+        public static final int signUpEmail=0x7f09006a;
+        public static final int signUpName=0x7f09006d;
+        public static final int signUpPassword=0x7f09006b;
+        public static final int signUpPhoneNumber=0x7f09006e;
+        public static final int spinnerPost=0x7f09005e;
         public static final int split_action_bar=0x7f090004;
         public static final int src_atop=0x7f090016;
         public static final int src_in=0x7f090017;
         public static final int src_over=0x7f090018;
-        public static final int status_bar_latest_event_content=0x7f090075;
+        public static final int status_bar_latest_event_content=0x7f090077;
         public static final int submit_area=0x7f090049;
         public static final int tabMode=0x7f09000c;
-        public static final int text=0x7f09007d;
-        public static final int text2=0x7f09007b;
+        public static final int text=0x7f09007f;
+        public static final int text2=0x7f09007d;
         public static final int textOmegaAddress=0x7f09004f;
         public static final int textOmegaDescription=0x7f09004e;
         public static final int textOmegaHeader=0x7f09004d;
         public static final int textOmegaPhoneNumber=0x7f090050;
         public static final int textSpacerNoButtons=0x7f090031;
-        public static final int textViewAddress=0x7f090060;
-        public static final int textViewCategory=0x7f09005c;
-        public static final int textViewDescription=0x7f090061;
-        public static final int textViewHeader=0x7f09005e;
-        public static final int textViewHelpingYou=0x7f090054;
-        public static final int textViewPassword=0x7f090057;
-        public static final int textViewPhone=0x7f090064;
-        public static final int textViewUsername=0x7f090055;
-        public static final int time=0x7f090079;
+        public static final int textViewAddress=0x7f090061;
+        public static final int textViewCategory=0x7f09005d;
+        public static final int textViewDescription=0x7f090062;
+        public static final int textViewHeader=0x7f09005f;
+        public static final int textViewHelpingYou=0x7f090055;
+        public static final int textViewPassword=0x7f090058;
+        public static final int textViewPhone=0x7f090065;
+        public static final int textViewUsername=0x7f090056;
+        public static final int time=0x7f09007b;
         public static final int title=0x7f09002a;
         public static final int title_template=0x7f09002d;
         public static final int topPanel=0x7f09002c;
@@ -2217,13 +2221,13 @@ containing a value of this type.
         public static final int view_helpp=0x7f0d0008;
     }
     public static final class string {
-        public static final int Address=0x7f0a0022;
-        public static final int Category=0x7f0a0028;
-        public static final int Details=0x7f0a0024;
-        public static final int MyPosts=0x7f0a0026;
-        public static final int Phone=0x7f0a0023;
-        public static final int Post=0x7f0a0021;
-        public static final int SubmitPost=0x7f0a0025;
+        public static final int Address=0x7f0a0023;
+        public static final int Category=0x7f0a002a;
+        public static final int Details=0x7f0a0025;
+        public static final int MyPosts=0x7f0a0027;
+        public static final int Phone=0x7f0a0024;
+        public static final int Post=0x7f0a0022;
+        public static final int SubmitPost=0x7f0a0026;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0a0001;
@@ -2285,13 +2289,17 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
         public static final int action_settings=0x7f0a0013;
         public static final int app_name=0x7f0a0012;
-        public static final int description=0x7f0a002a;
-        public static final int header=0x7f0a0029;
-        public static final int hello_world=0x7f0a0020;
+        /**  activity_details_charity_posts.xml 
+         */
+        public static final int deletePost=0x7f0a001e;
+        public static final int description=0x7f0a002c;
+        public static final int header=0x7f0a002b;
+        public static final int hello_world=0x7f0a0021;
         public static final int launchCharity=0x7f0a0016;
         public static final int launchRefugee=0x7f0a0015;
         public static final int login=0x7f0a001b;
         public static final int password=0x7f0a001a;
+        public static final int reset=0x7f0a0028;
         public static final int signUp=0x7f0a001d;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
@@ -2300,23 +2308,23 @@ containing a value of this type.
          [CHAR LIMIT=4] 
          */
         public static final int status_bar_notification_info_overflow=0x7f0a0011;
-        public static final int title_activity_display_charity=0x7f0a0027;
+        public static final int title_activity_display_charity=0x7f0a0029;
         /**  activity_launch.xml 
          */
         public static final int title_activity_launch_helpp=0x7f0a0014;
-        public static final int title_activity_list_refugee_view=0x7f0a002b;
+        public static final int title_activity_list_refugee_view=0x7f0a002d;
         /**  activity_login.xml 
          */
         public static final int title_activity_login_help=0x7f0a0017;
         /**  activity_post.xml 
          */
-        public static final int title_activity_post_helpp=0x7f0a001e;
+        public static final int title_activity_post_helpp=0x7f0a001f;
         /**  activity_signup.xml 
          */
         public static final int title_activity_signup_help=0x7f0a001c;
-        public static final int title_activity_splash=0x7f0a001f;
+        public static final int title_activity_splash=0x7f0a0020;
         public static final int username=0x7f0a0019;
-        public static final int userpromt=0x7f0a002c;
+        public static final int userpromt=0x7f0a002e;
         public static final int welcome=0x7f0a0018;
     }
     public static final class style {

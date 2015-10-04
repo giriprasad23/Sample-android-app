@@ -23,7 +23,6 @@
     <string name="title_activity_signup_help">SignupHelpActivity</string>
     <string name="signUp">signup</string>
 
-
     <!-- activity_list_charity_posts.xml -->
     <string-array name="post_type">
         <item>Food</item>
@@ -31,6 +30,9 @@
         <item>Clothing</item>
         <item>Furniture</item>
     </string-array>
+    
+    <!-- activity_details_charity_posts.xml -->
+    <string name="deletePost">Delete This Post</string>
 
     <!-- activity_post.xml -->
     <string name="title_activity_post_helpp">PostHelppActivity</string>
@@ -42,6 +44,7 @@
     <string name="Details">Details</string>
     <string name="SubmitPost">SubmitPost</string>
     <string name="MyPosts">MyPosts</string>
+    <string name="reset">Reset</string>
     <string name="title_activity_display_charity">DisplayCharity</string>
     <string name="Category">CATEGORY</string>
     <string name="header">Header</string>

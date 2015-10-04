@@ -66,10 +66,11 @@ public class ListCharityPostActivity extends Activity implements OnItemClickList
 
 		String[] sendData = item.split(";");
 		Intent i = new Intent(ListCharityPostActivity.this, DetailsCharityPostActivity.class);
-		i.putExtra("textOmegaHeader", sendData[0]);
-		i.putExtra("textOmegaDescription", sendData[1]);
-		i.putExtra("textOmegaAddress", sendData[2]);
-		i.putExtra("textOmegaPhoneNumber", sendData[3]);
+		i.putExtra("textOmegaID", sendData[0]);
+		i.putExtra("textOmegaHeader", sendData[1]);
+		i.putExtra("textOmegaDescription", sendData[2]);
+		i.putExtra("textOmegaAddress", sendData[3]);
+		i.putExtra("textOmegaPhoneNumber", sendData[4]);
 		startActivity(i);
 	}
 

@@ -40,6 +40,19 @@ public class LoginActivity extends Activity implements OnClickListener {
 		buttonSignUp.setOnClickListener(this);
 		buttonForgotPassword.setOnClickListener(this);
 		// userType = getIntent().getStringExtra("UserType");
+
+		//Checks for username and password in SharedPreferences and logs in automatically
+		//Currently set for Charity Users only
+		final String DEFAULT = "N/A";
+		SharedPreferences sharedpreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+		String name = sharedpreferences.getString("name", DEFAULT);
+		String pass = sharedpreferences.getString("pass", DEFAULT);
+		if (!name.equals(DEFAULT) && !pass.equals(DEFAULT)) {
+
+			Intent openActivity = new Intent("com.se.helpp.POSTACTIVITY");
+			startActivity(openActivity);
+			finish();
+		}
 	}
 
 	@Override
@@ -70,22 +83,25 @@ public class LoginActivity extends Activity implements OnClickListener {
 			Toast.makeText(getApplicationContext(), "Enter Username!", Toast.LENGTH_SHORT).show();
 		} else if (password.isEmpty()) {
 			Toast.makeText(getApplicationContext(), "Enter the password!", Toast.LENGTH_SHORT).show();
-		} else if (password.length() < 8
-				|| !(password.contains("@") || password.contains("!") || password.contains("&"))) {
-			Toast.makeText(getApplicationContext(),
-					"Password length should contain minimum 8 characters and atleast one special symbol( @,&,!)!",
-					Toast.LENGTH_LONG).show();
-		} else {
+		}
+		// else if (password.length() < 8
+		// || !(password.contains("@") || password.contains("!") ||
+		// password.contains("&"))) {
+		// Toast.makeText(getApplicationContext(),
+		// "Password length should contain minimum 8 characters and atleast one
+		// special symbol( @,&,!)!",
+		// Toast.LENGTH_LONG).show();
+		// }
+		else {
 			System.out.println(username);
 			System.out.println(password);
-			
-			SharedPreferences sharedpreferences = getSharedPreferences(
-					"MyData", Context.MODE_PRIVATE);
+
+			SharedPreferences sharedpreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
 			SharedPreferences.Editor editor = sharedpreferences.edit();
 			editor.putString("name", username);
 			editor.putString("pass", password);
 			editor.commit();
-			
+
 			// System.out.println(userType);
 			if (password.equals("refugee@1234") && username.equals("refugee")) {
 				intent = new Intent("com.se.helpp.LISTREFUGEEVIEWACTIVITY");
