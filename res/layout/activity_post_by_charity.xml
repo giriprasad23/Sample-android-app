@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/help_bg_img"
     android:orientation="vertical" >
+    
 
     <TextView
         android:id="@+id/textViewCategory"
@@ -102,6 +103,7 @@
 
     <Button
         android:id="@+id/buttonPost"
+        style="@style/NiceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -112,6 +114,7 @@
 
     <Button
         android:id="@+id/buttonMyPosts"
+        style="@style/NiceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/buttonPost"
@@ -121,6 +124,7 @@
 
     <Button
         android:id="@+id/buttonReset"
+        style="@style/NiceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/buttonPost"

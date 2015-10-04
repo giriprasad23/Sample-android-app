@@ -73,7 +73,7 @@
         android:textColor="@color/white"
         android:text="@string/login" />
 
-    <Button
+<!--     <Button
         android:id="@+id/buttonForgotPassword"
         style="@style/NiceButton"
         android:layout_width="wrap_content"
@@ -86,15 +86,14 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
         android:textSize="18sp" 
-        />
+        /> -->
 
     <Button
         android:id="@+id/buttonSignUp"
         style="@style/NiceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buttonForgotPassword"
-        android:layout_alignBottom="@+id/buttonForgotPassword"
+        android:layout_alignBottom="@+id/buttonLogin"
         android:layout_alignRight="@+id/editTextPassword"
         android:autoLink="all"
         android:text="@string/signUp"

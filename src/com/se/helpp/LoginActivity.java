@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class LoginActivity extends Activity implements OnClickListener {
 	Button buttonLogIn = null;
 	Button buttonSignUp = null;
-	Button buttonForgotPassword = null;
+//	Button buttonForgotPassword = null;
 	EditText editTextUserName = null;
 	EditText editTextPassword = null;
 	// String userType = null;
@@ -32,13 +32,13 @@ public class LoginActivity extends Activity implements OnClickListener {
 		// userType = getIntent().getExtras().getString("UserType");
 		buttonLogIn = (Button) findViewById(R.id.buttonLogin);
 		buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
-		buttonForgotPassword = (Button) findViewById(R.id.buttonForgotPassword);
+//		buttonForgotPassword = (Button) findViewById(R.id.buttonForgotPassword);
 		editTextUserName = (EditText) findViewById(R.id.editTextUsername);
 		editTextPassword = (EditText) findViewById(R.id.editTextPassword);
 
 		buttonLogIn.setOnClickListener(this);
 		buttonSignUp.setOnClickListener(this);
-		buttonForgotPassword.setOnClickListener(this);
+//		buttonForgotPassword.setOnClickListener(this);
 		// userType = getIntent().getStringExtra("UserType");
 
 		//Checks for username and password in SharedPreferences and logs in automatically

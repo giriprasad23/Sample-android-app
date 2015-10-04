@@ -17,7 +17,7 @@
     <string name="welcome">HELPING YOU</string>
     <string name="username">USER NAME</string>
     <string name="password">Password</string>
-    <string name="login">Login Page</string>
+    <string name="login">Login</string>
 
     <!-- activity_signup.xml -->
     <string name="title_activity_signup_help">SignupHelpActivity</string>
